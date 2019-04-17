@@ -1,0 +1,20 @@
+{
+	"name": "Chat-app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"env-cmd": "^8.0.2",
+		"express": "^4.16.4",
+		"socket.io": "^2.2.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "env-cmd ./config/dev.env nodemon src/index.js",
+		"start": "env-cmd ./config/dev.env node src/index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
