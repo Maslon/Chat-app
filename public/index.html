@@ -4,38 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/favicon.png">
+    <title>Chat</title>
 </head>
 <body>
-    <h1>ZDAREC pane</h1>
-
-    <div class="messages"></div>
-
-    <form>
-        <input name="message" type="text">
-        <button type="submit">Submit</button>
-    </form>
-    <button class="locationBtn">Send Location</button>
-
-    <script id="message-template" type="text/html">
-        <div>
-            <p>{{createdAt}} - {{message}}</p>
+    <div class="center-form">
+        <div class="center-form__box">
+            <h1 class="center-form__text">Join</h1>
+            <form class="login-form" action="/chat.html">
+                <label>Display Name</label>
+                <input type="text" name="username" required>
+                <label>Room</label>
+                <input type="text" name="room" required>
+                <button>Join</button>
+            </form>
         </div>
-    </script>
-
-    <script id="location-template" type="text/html">
-        <div>
-            <p><a href="{{location}}" target="_blank">My current Location</a></p>
-        </div>
-    </script>
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/chat.js"></script>
+    </div>
 </body>
-
 </html>

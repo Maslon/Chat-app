@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	font-family: Roboto, sans-serif;
+	margin: 0;
+	height: 100%;
+}
+
+/* index.html */
+
+.center-form {
+	/* width: 100%; */
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(32, 32, 32);
+}
+
+.center-form__box {
+	margin: 0 auto;
+	background-color: rgb(218, 216, 216);
+}
+
+.center-form__box form {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+}
+
+.center-form__box form > * {
+	margin-bottom: 0.3rem;
+}
+
+.center-form__text {
+	margin: 0.5rem 0 0 2rem;
+}
+
+/* chat.html */
+
+.container {
+	max-width: 900px;
+	text-align: center;
+	margin: 2rem auto;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.messages {
+	padding: 2rem;
+	height: 70vh;
+	/* width: 10%; */
+	text-align: left;
+	overflow: scroll;
+}
+
+.message_name {
+	font-weight: 700;
+}
+
+.message_time {
+	font-weight: 800;
+	font-size: 0.8rem;
+	color: rgba(0, 0, 0, 0.2);
+}
+
+a {
+	color: rgb(94, 171, 219);
+}
+
+.bottom {
+	margin: 1rem;
+	width: 100%;
+}
+
+form {
+	display: inline-block;
+}
+
+.chat-form {
+	width: 70%;
+}
+
+.chat-form input {
+	width: 80%;
+}
+
+input {
+	padding: 0.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	outline: none;
+}
+
+button {
+	padding: 0.5rem;
+	background-color: blueviolet;
+	color: white;
+	border: 1px solid blueviolet;
+	margin-top: 0.4rem;
+}
+
+button:hover {
+	cursor: pointer;
+	color: blueviolet;
+	background-color: white;
+}
+
+.locationBtn {
+	display: inline-block;
+}

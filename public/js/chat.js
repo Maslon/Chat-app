@@ -10,17 +10,22 @@ const messages = document.querySelector('.messages');
 const messageTemplate = document.querySelector('#message-template').innerHTML;
 const locationTemplate = document.querySelector('#location-template').innerHTML;
 
+// Options
+
+const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true });
+
 socket.on('message', ({ text, createdAt }) => {
 	const html = Mustache.render(messageTemplate, {
 		message: text,
-		createdAt: moment(createdAt).format()
+		createdAt: moment(createdAt).format('HH:mm')
 	});
 	messages.insertAdjacentHTML('beforeend', html);
 });
 
-socket.on('locationMessage', location => {
+socket.on('locationMessage', ({ coords, createdAt }) => {
 	const html = Mustache.render(locationTemplate, {
-		location
+		coords,
+		createdAt: moment(createdAt).format('HH:mm')
 	});
 	messages.insertAdjacentHTML('beforeend', html);
 });
@@ -62,3 +67,5 @@ locationBtn.addEventListener('click', () => {
 		);
 	});
 });
+
+socket.emit('join', { username, room });
