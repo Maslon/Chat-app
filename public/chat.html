@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <aside></aside>
+        <aside class="sidebar"></aside>
         <main>
             <h1 class="chat-heading">Chat</h1>
 
@@ -18,21 +18,33 @@
 
             <script id="message-template" type="text/html">
                 <div class="message">
-                    <p><span class="message_name">Some user Name   </span> <span class="message_time">{{createdAt}}</span> </p>
+                    <p><span class="message_name">{{ username }}</span> <span class="message_time">{{createdAt}}</span> </p>
                     <p>{{message}}</p>
                 </div>
             </script>
     
             <script id="location-template" type="text/html">
                 <div>
-                    <p><span class="message_name">Some user Name   </span> <span class="message_time">{{createdAt}}</span> </p>
+                    <p><span class="message_name">{{ username }}</span> <span class="message_time">{{createdAt}}</span> </p>
                     <p><a href="{{coords}}" target="_blank">My current Location</a></p>
+                </div>
+            </script>
+
+            <script id="sidebar-template" type="text/html">
+                <div>
+                    <h2 class="room-title">{{room}}</h2>
+                    <h3 class="list-title">Users</h3>
+                    <ul class="users">
+                        {{#users}}
+                            <li>{{username}}</li>
+                        {{/users}}
+                    </ul>
                 </div>
             </script>
     
             <div class="bottom">
                 <form class="chat-form">
-                    <input name="message" type="text">
+                    <input name="message" type="text" required autocomplete="off">
                     <button type="submit">Submit</button>
                 </form>
                 <button class="locationBtn">Send Location</button>
