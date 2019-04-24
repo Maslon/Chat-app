@@ -4,6 +4,23 @@ const input = document.querySelector('input');
 const sendButton = document.querySelector('button');
 const locationBtn = document.querySelector('.locationBtn');
 const messages = document.querySelector('.messages');
+const showUsers = document.querySelector('.showUsers');
+const closeSide = document.querySelector('.closeBtn');
+const sidebar = document.querySelector('.sidebar');
+
+//UI
+
+showUsers.addEventListener('click', () => {
+	sidebar.classList.toggle('opened');
+});
+
+// function addClose() {
+// 	if (sidebar.classList.contains('opened')) {
+// 		window.addEventListener('click', e => {
+// 			sidebar.classList.remove('opened');
+// 		});
+// 	}
+// }
 
 //Templates
 

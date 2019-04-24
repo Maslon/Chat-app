@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" href="/img/favicon.png">
     <title>Chat</title>
 </head>
 <body>
+    <div class="heading">
+        <span class="showUsers"><i class="fas fa-lg fa-users "></i></span>
+        <h1 class="chat-heading">Chat</h1>
+    </div>
     <div class="container">
         <aside class="sidebar"></aside>
         <main>
-            <h1 class="chat-heading">Chat</h1>
-
             <div class="messages"></div>
 
             <script id="message-template" type="text/html">
@@ -32,20 +35,22 @@
 
             <script id="sidebar-template" type="text/html">
                 <div>
+                    <span class="closeBtn" onclick="sidebar.classList.remove('opened')"><i class="fas fa-lg fa-times"></i></span>
                     <h2 class="room-title">{{room}}</h2>
-                    <h3 class="list-title">Users</h3>
+                    <h3 class="list-title">Users:</h3>
                     <ul class="users">
                         {{#users}}
                             <li>{{username}}</li>
                         {{/users}}
                     </ul>
                 </div>
+
             </script>
     
             <div class="bottom">
                 <form class="chat-form">
                     <input name="message" type="text" required autocomplete="off">
-                    <button type="submit">Submit</button>
+                    <button type="submit">Send</button>
                 </form>
                 <button class="locationBtn">Send Location</button>
             </div>

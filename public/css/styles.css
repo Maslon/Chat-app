@@ -15,12 +15,115 @@ body {
 	height: 100%;
 }
 
+.heading {
+	width: calc(50% + 33px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.showUsers {
+	margin-left: 1rem;
+	cursor: pointer;
+}
+
+.closeBtn {
+	float: right;
+	margin: 0.3rem;
+	cursor: pointer;
+	color: white;
+}
+
+.closeBtn:hover,
+.showUsers:hover {
+	color: blueviolet;
+	transition: color 0.2s linear;
+}
+
+.chat-heading {
+	margin-top: 1rem;
+}
+
 .sidebar {
-	width: 30%;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	width: 0%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.97);
+	transition: width 0.5s linear;
+}
+
+@media (min-width: 700px) {
+	.container {
+	}
+
+	.heading {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	.sidebar {
+		visibility: visible;
+		position: relative;
+		width: 30%;
+		height: 84vh;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.showUsers {
+		display: none;
+	}
+
+	.closeBtn {
+		display: none;
+	}
+
+	main {
+		width: 70%;
+	}
+
+	.room-title {
+		color: black;
+	}
+
+	.list-title {
+		color: black;
+	}
+}
+
+.opened {
+	width: 60%;
+	visibility: visible;
+}
+
+.room-title {
+	text-decoration: underline;
+	letter-spacing: 2px;
+	color: white;
+}
+
+.list-title {
+	color: white;
+	text-align: left;
+	margin-left: 1rem;
+}
+
+.users {
+	padding: 0;
+	text-align: left;
+	margin-left: 1rem;
+	list-style: none;
+	color: white;
 }
 
 main {
 	border: 1px solid rgba(0, 0, 0, 0.2);
+	width: 100%;
 }
 
 /* index.html */
@@ -67,7 +170,7 @@ main {
 	height: 70vh;
 	/* width: 10%; */
 	text-align: left;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .message_name {
@@ -85,7 +188,7 @@ a {
 }
 
 .bottom {
-	margin: 1rem;
+	margin-bottom: 1rem;
 	width: 100%;
 }
 
@@ -97,6 +200,22 @@ input {
 	padding: 0.5rem;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	outline: none;
+}
+
+.chat-form {
+	width: 95%;
+}
+
+.chat-form input {
+	width: 100%;
+}
+
+.chat-form button {
+	width: 60%;
+}
+
+.locationBtn {
+	width: 50%;
 }
 
 button {
@@ -111,8 +230,4 @@ button:hover {
 	cursor: pointer;
 	color: blueviolet;
 	background-color: white;
-}
-
-.locationBtn {
-	display: inline-block;
 }

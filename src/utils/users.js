@@ -1,8 +1,10 @@
 const users = [];
 
+const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+
 const addUser = ({ id, username, room }) => {
 	username = username.trim().toLowerCase();
-	room = room.trim().toLowerCase();
+	room = capitalize(room.trim());
 
 	if (!username || !room) {
 		return {
